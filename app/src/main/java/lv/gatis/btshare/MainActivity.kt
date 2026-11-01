@@ -96,8 +96,12 @@ class MainActivity : Activity() {
         audioManager.unregisterAudioDeviceCallback(deviceCallback)
         PlayerService.listener = null
         val adapter = btAdapter
+        // Copy first: closeProfileProxy can call onServiceDisconnected synchronously,
+        // which removes from `proxies` while we'd still be iterating it.
+        val open = proxies.toList()
+        proxies.clear()
         if (adapter != null) {
-            for ((profile, proxy) in proxies) {
+            for ((profile, proxy) in open) {
                 try {
                     adapter.closeProfileProxy(profile, proxy)
                 } catch (_: Throwable) {
@@ -222,7 +226,7 @@ class MainActivity : Activity() {
             return
         }
         val lines = mutableListOf<String>()
-        for ((profile, proxy) in proxies) {
+        for ((profile, proxy) in proxies.toList()) {
             val devices = try { proxy.connectedDevices } catch (_: Throwable) { emptyList() }
             for (d in devices) {
                 val name = try { d.name } catch (_: Throwable) { null } ?: d.address
