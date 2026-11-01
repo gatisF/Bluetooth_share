@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView style="@android:style/TextAppearance.Material.Title"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="1. What your phone supports" />
+        <TextView android:id="@+id/caps"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="6dp" android:textIsSelectable="true" />
+        <TextView android:id="@+id/verdict"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="8dp" android:textStyle="bold" />
+        <Button android:id="@+id/btnPerm"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Grant Bluetooth permission" />
+
+        <TextView style="@android:style/TextAppearance.Material.Title"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="2. Connected Bluetooth audio" />
+        <TextView android:id="@+id/devices"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="6dp" />
+        <TextView android:id="@+id/outputs"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="6dp" />
+        <Button android:id="@+id/btnRefresh"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Refresh" />
+
+        <TextView style="@android:style/TextAppearance.Material.Title"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="3. Share to several devices" />
+        <TextView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="6dp"
+            android:text="Multi-device output is switched on by Android itself. Open the output picker and tick every headset or speaker (Samsung: Dual audio; Pixel and Android 15+: Audio sharing / Auracast)." />
+        <Button android:id="@+id/btnOutput"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Open output picker" />
+        <Button android:id="@+id/btnSharing"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Open Audio sharing settings" />
+        <Button android:id="@+id/btnBtSettings"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Open Bluetooth settings (pair devices)" />
+
+        <TextView style="@android:style/TextAppearance.Material.Title"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="4. Player" />
+        <TextView android:id="@+id/nowPlaying"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="6dp" />
+        <Button android:id="@+id/btnPick"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Choose audio files and play" />
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button android:id="@+id/btnToggle"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Play / Pause" />
+            <Button android:id="@+id/btnNext"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Next" />
+            <Button android:id="@+id/btnStop"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Stop" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="12dp" android:alpha="0.7"
+            android:text="Any other app (Spotify, YouTube…) also plays to all shared devices once sharing is on. The player here is for local files." />
+    </LinearLayout>
+</ScrollView>
